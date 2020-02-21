@@ -1,0 +1,89 @@
+USE [master];
+GO
+
+/****** Object:  Database [ETrade]    Script Date: 21.02.2020 22:02:00 ******/
+
+CREATE DATABASE [ETrade] CONTAINMENT = NONE ON PRIMARY
+(
+                                                       NAME = N'ETrade', 
+                                                       FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\ETrade.mdf', 
+                                                       SIZE = 8192 KB, 
+                                                       MAXSIZE = UNLIMITED, 
+                                                       FILEGROWTH = 65536 KB
+) LOG ON
+(
+                                                       NAME = N'ETrade_log', 
+                                                       FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\ETrade_log.ldf', 
+                                                       SIZE = 8192 KB, 
+                                                       MAXSIZE = 2048 GB, 
+                                                       FILEGROWTH = 65536 KB
+);
+GO
+IF(1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+    BEGIN
+        EXEC [ETrade].[dbo].[sp_fulltext_database] 
+             @action = 'enable';
+END;
+GO
+ALTER DATABASE [ETrade] SET ANSI_NULL_DEFAULT OFF; 
+GO
+ALTER DATABASE [ETrade] SET ANSI_NULLS OFF; 
+GO
+ALTER DATABASE [ETrade] SET ANSI_PADDING OFF; 
+GO
+ALTER DATABASE [ETrade] SET ANSI_WARNINGS OFF; 
+GO
+ALTER DATABASE [ETrade] SET ARITHABORT OFF; 
+GO
+ALTER DATABASE [ETrade] SET AUTO_CLOSE ON; 
+GO
+ALTER DATABASE [ETrade] SET AUTO_SHRINK OFF; 
+GO
+ALTER DATABASE [ETrade] SET AUTO_UPDATE_STATISTICS ON; 
+GO
+ALTER DATABASE [ETrade] SET CURSOR_CLOSE_ON_COMMIT OFF; 
+GO
+ALTER DATABASE [ETrade] SET CURSOR_DEFAULT GLOBAL; 
+GO
+ALTER DATABASE [ETrade] SET CONCAT_NULL_YIELDS_NULL OFF; 
+GO
+ALTER DATABASE [ETrade] SET NUMERIC_ROUNDABORT OFF; 
+GO
+ALTER DATABASE [ETrade] SET QUOTED_IDENTIFIER OFF; 
+GO
+ALTER DATABASE [ETrade] SET RECURSIVE_TRIGGERS OFF; 
+GO
+ALTER DATABASE [ETrade] SET ENABLE_BROKER; 
+GO
+ALTER DATABASE [ETrade] SET AUTO_UPDATE_STATISTICS_ASYNC OFF; 
+GO
+ALTER DATABASE [ETrade] SET DATE_CORRELATION_OPTIMIZATION OFF; 
+GO
+ALTER DATABASE [ETrade] SET TRUSTWORTHY OFF; 
+GO
+ALTER DATABASE [ETrade] SET ALLOW_SNAPSHOT_ISOLATION OFF; 
+GO
+ALTER DATABASE [ETrade] SET PARAMETERIZATION SIMPLE; 
+GO
+ALTER DATABASE [ETrade] SET READ_COMMITTED_SNAPSHOT ON; 
+GO
+ALTER DATABASE [ETrade] SET HONOR_BROKER_PRIORITY OFF; 
+GO
+ALTER DATABASE [ETrade] SET RECOVERY SIMPLE; 
+GO
+ALTER DATABASE [ETrade] SET MULTI_USER; 
+GO
+ALTER DATABASE [ETrade] SET PAGE_VERIFY CHECKSUM;  
+GO
+ALTER DATABASE [ETrade] SET DB_CHAINING OFF; 
+GO
+ALTER DATABASE [ETrade] SET FILESTREAM(NON_TRANSACTED_ACCESS = OFF); 
+GO
+ALTER DATABASE [ETrade] SET TARGET_RECOVERY_TIME = 60 SECONDS; 
+GO
+ALTER DATABASE [ETrade] SET DELAYED_DURABILITY = DISABLED; 
+GO
+ALTER DATABASE [ETrade] SET QUERY_STORE = OFF;
+GO
+ALTER DATABASE [ETrade] SET READ_WRITE; 
+GO
